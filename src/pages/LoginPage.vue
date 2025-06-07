@@ -13,9 +13,9 @@ const { query } = useRoute()
 
 const handleSubmit = () => {
   const payload = {
+    ...query,
     username: username.value,
     password: password.value,
-    ...query,
   } as LoginPayload
 
   AuthService.login(payload)
