@@ -1,0 +1,8 @@
+services:
+  app:
+    restart: unless-stopped
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8021:5174
