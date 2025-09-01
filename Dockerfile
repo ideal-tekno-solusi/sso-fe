@@ -6,6 +6,8 @@ COPY . .
 
 RUN npm install
 
+RUN npm build
+
 RUN npm i -g serve
 
 CMD [ "serve", "-s", "dist", "-l", "0", "-p", "8080"]
