@@ -19,7 +19,13 @@ const handleSubmit = () => {
   } as LoginPayload
 
   AuthService.login(payload)
-    .then(console.log)
+    .then(res => {
+      if (res.status == 200) {
+        window.location.href = res.data.redirect_uri + "?code=" + res.data.code
+      }
+
+      console.warn(res.status)
+    })
     .catch(console.error)
     .finally(() => console.info("success"))
 }
