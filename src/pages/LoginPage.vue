@@ -21,7 +21,7 @@ const handleSubmit = () => {
   AuthService.login(payload)
     .then(res => {
       if (res.status == 200) {
-        window.location.href = res.data.redirect_uri + "?code=" + res.data.code + "&state=" + res.data.state
+        window.location.href = res.data.data.authorize_url
       }
 
       console.warn(res.status)

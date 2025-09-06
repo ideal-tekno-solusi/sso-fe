@@ -4,7 +4,7 @@ export interface LoginPayload {
 }
 
 export interface LoginResponse {
-  redirect_uri: string
-  code: string
-  state: string
+  data: {
+    authorize_url: string
+  }
 }
